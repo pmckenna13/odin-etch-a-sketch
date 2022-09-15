@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.pageHeader{
+    text-align: center;
+    color: red;
+    font-size: 28px;
+}
+
+.gridContainer{
+    align-content: center;
+    background: white;
+}
+
+.row{
+    
+    display: block;
+    height: 2em; 
+    line-height: 2em; 
+}
+
+.column{
+    display: inline-block;
+    width: 6.25%;
+    box-sizing: border-box;
+    border: 1px solid blue;
+    height: 2rem;
+}
