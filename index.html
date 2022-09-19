@@ -10,5 +10,26 @@
 </head>
 <body>
     <h1 class="pageHeader">Etch-A-Sketch</h1>
+    <div id="pageContainer">
+        <div id="gridContainer"></div>
+        <div id="settingsContainer">
+            <div id="colorSettings"></div>
+                <input type="color" value="black" id="colorPicker">
+                <label for="colorPicker">Choose your color!</label>        
+            <div id="sizeSettings"></div>
+                <input id="sizePicker" type="number" value="16" list="validNumbers">
+                <datalist id="validNumbers">
+                        <option value="4"></option>
+                        <option value="9"></option>
+                        <option value="16"></option>
+                        <option value="25"></option>
+                        <option value="36"></option>
+                        <option value="49"></option>
+                        <option value="64"></option>
+                        <option value="81"></option>
+                        <option value="100"></option>
+                </datalist>
+        </div>
+    </div>
 </body>
 </html>

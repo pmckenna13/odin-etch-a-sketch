@@ -1,3 +1,9 @@
+const gridContainer = document.getElementById("gridContainer");
+const sizePicker = document.getElementById("sizePicker");
+const gridSize = sizePicker.value;
+sizePicker.addEventListener('change', resetGrid);
+
+
 var mouseDown = "false";
 document.body.onmousedown = function(){
     mouseDown = "true";
@@ -6,37 +12,28 @@ document.body.onmouseup = function(){
     mouseDown = "false";
 }
 
+function resetGrid(e)
+{
+    gridContainer.innerHTML="";
+    createGrid(e.target.value);
+}
+
 function changeColor(e){
-    
-    e.target.style.backgroundColor = "black";
+    const newColor = document.getElementById("colorPicker").value;
+    e.target.style.backgroundColor = newColor;
 }
 
-function createGrid(e){
-    let size = 16;
-    var container = document.createElement("div");
-    container.id = "main";
-    container.className = "gridContainer";
-
-    for(let i=0; i< size; i++){
-        var row = document.createElement("div");
-        row.className = "row";
-        row.id = "row" + i;
-
-        for(let j=0; j < size; j++){
-            var column = document.createElement("div");
-            column.className = "column";
-            column.id = "column" + j;
-            column.addEventListener("mouseover", changeColor);
-            row.appendChild(column);
-            
-        }
-
-        container.appendChild(row);
+function createGrid(size)
+{
+    gridContainer.style.setProperty("--numRows",size);
+    gridContainer.style.setProperty("--numColumns", size);
+    for (i=0; i < (size * size); i++)
+    {
+        let cell = document.createElement("div");
+        cell.addEventListener("mouseover", changeColor);
+        gridContainer.appendChild(cell).className = "gridCell";
     }
-
-    e.appendChild(container);
-
 }
 
-createGrid(document.body);
+createGrid(gridSize);
 
