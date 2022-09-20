@@ -6,32 +6,40 @@
 
 .pageHeader{
     text-align: center;
+    margin: auto;
     color: red;
     font-size: 28px;
 }
 
 #pageContainer{
-    padding: 20px 100px;
-    max-width: 720px;
+    padding: 0px 0px;
+    margin: auto;
+    width: 720px;
 }
 
 #gridContainer{
     display: grid;
     height: 720px;
     width: 720px;
+    margin: auto;
     border: 1px solid black;
     grid-gap: 0em;
     grid-template-rows: repeat(var(--numColumns), 1fr);
     grid-template-columns: repeat(var(--numRows), 1fr);
 }
 
-.gridCell
-{
-    padding: 1em;
-    border: 1px solid blue;
+.gridCell{
+    padding: 1px;
+    border: 1px solid black;
     text-align: center;
 }
 
 #settingsContainer{
-    padding: 10px 50px;
+    padding: 10px 0px;
+    display: inline-block;
 }
+
+#settingsContainer > div{
+    padding: 10px 0px;
+}
+
